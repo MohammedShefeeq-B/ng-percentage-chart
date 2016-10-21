@@ -1,0 +1,35 @@
+{
+  "name": "ng-percentage-chart",
+  "version": "0.1.0",
+  "description": "Angular percentage doughnut chart module",
+  "main": "ng-percentage-chart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mshefeeqb/ng-percentage-chart.git"
+  },
+  "keywords": [
+    "doughnut",
+    "percentage",
+    "ng-doughnut",
+    "ng-percentage",
+    "ng-percentage-chart"
+  ],
+  "author": "Mohammed shefeeq B",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mshefeeqb/ng-percentage-chart/issues"
+  },
+  "homepage": "https://github.com/mshefeeqb/ng-percentage-chart#readme",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}

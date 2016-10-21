@@ -1,0 +1,27 @@
+{
+  "name": "ng-percentage-chart",
+  "authors": [
+    "shefeeq <shefeeq@sensomate.com>"
+  ],
+  "description": "Angular percentage doughnut chart module",
+  "main": "ng-percentage-chart.js",
+  "keywords": [
+    "doughnut",
+    "percentage",
+    "ng-doughnut",
+    "ng-percentage",
+    "ng-percentage-chart"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.8"
+  }
+}
