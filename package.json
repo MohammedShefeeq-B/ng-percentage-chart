@@ -1,6 +1,6 @@
 {
   "name": "ng-percentage-chart",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Angular percentage doughnut chart module",
   "main": "ng-percentage-chart.js",
   "scripts": {
