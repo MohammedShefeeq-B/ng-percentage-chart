@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <title>Doughnut chart</title>
     <script src="/bower_components/angular/angular.js"></script>
-    <script src="/dist/ng-percentage-chart.js"></script>
+    <script src="/dist/ng-percentage-chart.min.js"></script>
 </head>
 
 <body ng-controller="demoController">
      <div style="text-align: center;margin:50px;">
-        <div percentage-circle duration="{{duration}}" periodarr="periodArr" radius="100" stroke="20"></div>
+        <div percentage-circle duration="{{duration}}" data="data" radius="100" stroke="20"></div>
     </div>
     
     <script>
     var app = angular.module('app', ['ng-percentage-chart']);
     app.controller('demoController', function($scope) {
         $scope.duration=30;
-        $scope.periodArr=[1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0];
+        $scope.data=[1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0];
     });
     </script>
 </body>

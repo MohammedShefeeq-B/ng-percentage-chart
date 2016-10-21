@@ -9,7 +9,7 @@
         return {
             restrict: 'A',
             scope: {
-                periodarr: "=periodarr",
+                data: "=data",
                 radius: "=radius",
                 stroke: "=stroke",
                 anticlockwise: "=anticlockwise"
@@ -26,7 +26,7 @@
 
                 };
 
-                var periodArr = scope.periodarr;
+                var data = scope.data;
                 var totalDuration = attrs.duration;
                 var canvas = document.createElement('canvas');
                 canvas.width = canvas.height = 2 * options.radius + options.lineWidth;
@@ -36,8 +36,8 @@
                 elem.append(canvas);
 
                 var presentCount = 0;
-                for (var i = periodArr.length - 1; i >= 0; i--) {
-                    if (periodArr[i]) {
+                for (var i = data.length - 1; i >= 0; i--) {
+                    if (data[i]) {
                         presentCount++;
                     }
                 }
@@ -85,7 +85,7 @@
                     var startAngle = -90 * Math.PI / 180;
                     var endAngle = 0;
 
-                    if (!periodArr.length) {
+                    if (!data.length) {
                         endAngle = 270 * Math.PI / 180;
                         // console.log(startAngle, endAngle);
                         drawArc(startAngle, endAngle, options.emptyColor, options.emptyColor);
@@ -94,13 +94,13 @@
                     var lastMinuteInidication;
                     var endAngle = 0;
 
-                    for (var i = 0; i < periodArr.length; i++) {
-                        if (i !== 0 && periodArr[i] !== lastMinuteInidication) {
-                            //console.log(periodArr[i],lastMinuteInidication);
+                    for (var i = 0; i < data.length; i++) {
+                        if (i !== 0 && data[i] !== lastMinuteInidication) {
+                            //console.log(data[i],lastMinuteInidication);
                             //check previous and next value (if both 1 make undefined to 1)
-                            if (periodArr[i] == undefined) {
-                                if (periodArr[i - 1] == 1 && periodArr[i + 1] == 1) {
-                                    periodArr[i] = 1;
+                            if (data[i] == undefined) {
+                                if (data[i - 1] == 1 && data[i + 1] == 1) {
+                                    data[i] = 1;
                                     endAngle += unitAngle;
                                 } else {
                                     drawArc(startAngle, startAngle + endAngle, setColor(lastMinuteInidication), setInnerColor(presentPercent));
@@ -112,18 +112,18 @@
                                 startAngle += endAngle;
                                 endAngle = unitAngle;
                             }
-                            //console.log(periodArr[i],lastMinuteInidication);
+                            //console.log(data[i],lastMinuteInidication);
 
                         } else {
                             endAngle += unitAngle;
                         }
 
-                        lastMinuteInidication = periodArr[i];
+                        lastMinuteInidication = data[i];
                     }
                     drawArc(startAngle, startAngle + endAngle, setColor(lastMinuteInidication), setInnerColor(presentPercent));
                     startAngle += endAngle;
-                    if (periodArr.length < totalDuration) {
-                        drawArc(startAngle, startAngle + (totalDuration - periodArr.length) * unitAngle, setColor(), setInnerColor(presentPercent));
+                    if (data.length < totalDuration) {
+                        drawArc(startAngle, startAngle + (totalDuration - data.length) * unitAngle, setColor(), setInnerColor(presentPercent));
                     }
                 }
                 initGraph();
